@@ -32,21 +32,21 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and Push Docker Image
+      - name: Build and Push Docker Image : javaenjoy0714/reactboard:v1
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/react-board:${{ github.sha }} .
-          docker push ${{ secrets.DOCKER_USERNAME }}/react-board:${{ github.sha }}
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/reactboard:${{ github.sha }} .  
+          docker push ${{ secrets.DOCKER_USERNAME }}/reactboard:${{ github.sha }}
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #  Kubernetes 관련 설정		
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  # Kubernetes 배포 YAML 파일(k8s/deployment.yaml)의 image 태그를 새로 빌드되는 이미지 태그로 업데이트합니다.  
+# Kubernetes 배포 YAML 파일(k8s/deployment.yaml)의 image 태그를 새로 빌드되는 이미지 태그로 업데이트합니다.  
       - name: Update Deployment YAML
         env:
           DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
           IMAGE_TAG: ${{ github.sha }}
         run:  |
-          sed -i 's|image: .*|image: ${{ secrets.DOCKER_HUB_USERNAME }}/react-board:${{ github.sha }}|' k8s/deployment.yaml
+          sed -i 's|image: .*|image: ${{ secrets.DOCKER_HUB_USERNAME }}/reactboard:${{ github.sha }}|' k8s/deployment.yaml
 
           
       # 변경사항이 있으면 커밋하고 푸시합니다.
