@@ -38,8 +38,8 @@ jobs:
           DOCKER_HUB_REPOSITORY: react-board
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $DOCKER_HUB_USERNAME/$DOCKER_HUB_USERNAME:$IMAGE_TAG .  
-          docker push $DOCKER_HUB_USERNAME/$DOCKER_HUB_USERNAME:$IMAGE_TAG
+          docker build -t $DOCKER_HUB_USERNAME/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG .  
+          docker push $DOCKER_HUB_USERNAME/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #  Kubernetes 관련 설정		
@@ -51,7 +51,7 @@ jobs:
           DOCKER_HUB_REPOSITORY: react-board
           IMAGE_TAG: ${{ github.sha }}
         run:  |
-          sed -i 's|image: .*|image: $DOCKER_HUB_USERNAME/$DOCKER_HUB_USERNAME:$IMAGE_TAG|' k8s/deployment.yaml
+          sed -i 's|image: .*|image: $DOCKER_HUB_USERNAME/$DOCKER_HUB_REPOSITORY:$IMAGE_TAG|' k8s/deployment.yaml
 
           
       # 변경사항이 있으면 커밋하고 푸시합니다.
