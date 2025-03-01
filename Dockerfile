@@ -22,14 +22,14 @@ RUN npm run build
 
 # 2단계 : 실행 컨테이너
 
-FROM nginx:alpine
+FROM nginx:1.21-alpine
 
 
 # React 빌드 파일을 Nginx 경로로 복사
 COPY --from=build /app/dist /usr/share/nginx/html
 
 
-# Nginx 설정 변경 (필요시)
+# Nginx 설정 변경 (SPA는 반드시 필요)
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
 
