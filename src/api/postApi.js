@@ -1,7 +1,7 @@
 
 import axios from "axios";
 
-const API_SERVER_HOST = 'http://postapp.example.com';
+const API_SERVER_HOST = 'http://192.168.92.133:32080';
 // const API_SERVER_HOST = 'http://localhost:8080';
 
 const prefix = `${API_SERVER_HOST}/api/v1`;
