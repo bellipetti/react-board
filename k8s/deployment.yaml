@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: react-board-container
-        image: javaenjoy0714/react-board:3f9555d1e7a54add26b70f08185a1c87a74f001b
+        image: javaenjoy0714/react-board:e9f408c6f5a084c45ecc19c7350dfe7edaf86195
         ports:
         - containerPort: 80
