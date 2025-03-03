@@ -1,8 +1,12 @@
 
 import axios from "axios";
 
-const API_SERVER_HOST = 'http://post-service.postapp.svc.cluster.local:8080';
+// React는 브라우저에서 실행되므로, 브라우저는 post-service.postapp.svc.cluster.local:8080에 직접 접근할 수 없습니다. (클러스터 내부에서만 접근 가능)
+// const API_SERVER_HOST = 'http://post-service.postapp.svc.cluster.local:8080';
 // const API_SERVER_HOST = 'http://localhost:8080';
+
+// React에서 API 요청 시 Ingress의 도메인을 사용해야 합니다.
+const API_SERVER_HOST = 'http://192.168.92.135:30080';
 
 const prefix = `${API_SERVER_HOST}/api/v1`;
 
