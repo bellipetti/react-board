@@ -6,7 +6,7 @@ import axios from "axios";
 // const API_SERVER_HOST = 'http://localhost:8080';
 
 // React에서 API 요청 시 Ingress의 도메인을 사용해야 합니다.
-const API_SERVER_HOST = 'http://192.168.92.135:30080';
+const API_SERVER_HOST = 'http://192.168.92.142:30080';
 
 const prefix = `${API_SERVER_HOST}/api/v1`;
 
