@@ -49,3 +49,11 @@ export const getPosts = async (pageParam) => { // { page: 1, size: 10, keyfield:
     return res.data;
 }
 
+// 게시글 상세조회
+export const getDelete = async (id) => {
+
+    const res = await axios.Delete(`${prefix}/posts/${id}`);
+
+    return res.data;
+}
+
