@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: react-board-container
-        image: bellipetti/react-board:8123881f773ed5884a20ce30c07bf7aa8c414dae
+        image: bellipetti/react-board:92c83f48285b7cf00e9a3e791ccb3d279a1c5e16
         ports:
         - containerPort: 80
