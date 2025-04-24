@@ -21,6 +21,8 @@ const initialState = {
 
 
 
+
+
 const BoardList = () => {
 
     const [searchParams] = useSearchParams();
