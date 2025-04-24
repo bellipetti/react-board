@@ -3,14 +3,7 @@ import { getPosts } from '../api/postApi';
 import { useCustomHook } from '../hooks/useCustomHooks';
 import PageComponent from "./common/PageComponent";
 import { useSearchParams } from "react-router-dom";
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of f4983cd (update 1000+9)
-=======
 import '../App.css'
->>>>>>> parent of fafa913 (update 1000+9)
 
 
 const initialState = {
@@ -29,19 +22,19 @@ const initialState = {
 
 
 const BoardList = () => {
-    
-    const [ searchParams ] = useSearchParams();
+
+    const [searchParams] = useSearchParams();
 
     const { moveToList, moveToView, page, size } = useCustomHook();
 
-    const [ serverData, setServerData ] = useState({...initialState});
+    const [serverData, setServerData] = useState({ ...initialState });
 
-    const [ keyfield, setKeyfield ] = useState('');
+    const [keyfield, setKeyfield] = useState('');
 
-    const [ keyword, setKeyword ] = useState('');
+    const [keyword, setKeyword] = useState('');
 
     useEffect(() => {
-      
+
         const keyfieldParam = searchParams.get('keyfield') || '';
         const keywordParam = searchParams.get('keyword') || '';
 
@@ -63,7 +56,7 @@ const BoardList = () => {
 
             setKeyfield(keyfieldParam);
             setKeyword(keywordParam);
-       
+
         } else {
             getPosts({ page, size })
                 .then(data => {
@@ -75,9 +68,9 @@ const BoardList = () => {
                 })
         }
 
-    },  [ page, size ] );  // 의존 배열
+    }, [page, size]);  // 의존 배열
 
-        
+
     const handleChangeKeyfield = (e) => {
         setKeyfield(e.target.value);
         setKeyword("");
@@ -88,7 +81,7 @@ const BoardList = () => {
     }
 
     const handleClick = () => {
-        
+
         const pageNum = 1;
 
         getPosts({ page: pageNum, size, keyfield, keyword })
@@ -100,65 +93,60 @@ const BoardList = () => {
             .catch(error => {
                 console.eror('error : ', error);
             })
-        
-        moveToList({page: pageNum, size, keyfield, keyword});    
+
+        moveToList({ page: pageNum, size, keyfield, keyword });
     }
 
 
     return (
         <>
-<<<<<<< HEAD
-            return (
-            <>
-                {/* 메인 비주얼 */}
-                <div className="main-visual">
-                    <div>
-                        <h1>AI 시대를 넘어, 미래를 향해</h1>
-                        <p>2025 중앙대학교 스타일 게시판</p>
-                    </div>
+            {/* 메인 비주얼 */}
+            <div className="main-visual">
+                <div>
+                    <h1>AI 시대를 넘어, 미래를 향해</h1>
+                    <p>2025 중앙대학교 스타일 게시판</p>
                 </div>
-=======
+            </div>
             <h3>BoardList Page</h3>
->>>>>>> parent of 640b1dc (update react 1000+9)
 
             {/* 검색 폼 */}
             <div style={{ marginBottom: "20px" }}>
-                    <select value={keyfield} onChange={handleChangeKeyfield}>     
-                        <option value="">선택</option>                   
-                        <option value="writer">작성자</option>
-                        <option value="title">제목</option>
-                        <option value="content">내용</option>
-                    </select>&nbsp;&nbsp;
-                    <input type="text" placeholder="검색어 입력" value={keyword} onChange={handleChangeKeyword}/>&nbsp;&nbsp;
-                    <button type="button" onClick={handleClick}>검색</button>
+                <select value={keyfield} onChange={handleChangeKeyfield}>
+                    <option value="">선택</option>
+                    <option value="writer">작성자</option>
+                    <option value="title">제목</option>
+                    <option value="content">내용</option>
+                </select>&nbsp;&nbsp;
+                <input type="text" placeholder="검색어 입력" value={keyword} onChange={handleChangeKeyword} />&nbsp;&nbsp;
+                <button type="button" onClick={handleClick}>검색</button>
             </div>
 
-            <table className="board-table"> 
+            <table className="board-table">
                 <thead>
                     <tr>
                         <th>번호</th>
                         <th>제목</th>
                         <th>작성자</th>
                         <th>작성일</th>
-                        </tr>
+                    </tr>
                 </thead>
                 <tbody>
-                {
-                    serverData.dtoList.map((post, index) => {  // index = 0 시작
-                        return <tr key={post.id}>
-                            <td>{ ((page -1) * size ) + index + 1}</td>
-                            <td onClick={() => moveToView(post.id)} style={{cursor: 'pointer'}}>{ post.title }</td>
-                            <td>{ post.writer }</td>
-                            <td>{ post.regDate }</td>
-                        </tr>
-                    })
+                    {
+                        serverData.dtoList.map((post, index) => {  // index = 0 시작
+                            return <tr key={post.id}>
+                                <td>{((page - 1) * size) + index + 1}</td>
+                                <td onClick={() => moveToView(post.id)} style={{ cursor: 'pointer' }}>{post.title}</td>
+                                <td>{post.writer}</td>
+                                <td>{post.regDate}</td>
+                            </tr>
+                        })
 
-                }
+                    }
                 </tbody>
             </table>
 
-             <PageComponent serverData={ serverData } searchCondition= {{keyfield, keyword}}  movePage={ moveToList } />  {/* props */}
-            
+            <PageComponent serverData={serverData} searchCondition={{ keyfield, keyword }} movePage={moveToList} />  {/* props */}
+
         </>
 
     );
