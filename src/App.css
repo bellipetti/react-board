@@ -58,7 +58,8 @@ body {
   align-items: center;
   justify-content: center;
   padding: 5rem 2rem;
-  background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=80') no-repeat center center;
+  /* background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=80') no-repeat center center; */
+  background: url('https://img.freepik.com/free-vector/vector-paper-frame-food-pattern-background_53876-136666.jpg?t=st=1745488113~exp=1745491713~hmac=1303dff433135f44b75809a1409648c2c66245b485c0eb67a8919dc4e4eb5965&w=996') no-repeat center center;
   background-size: cover;
   color: #fff;
   text-align: center;
