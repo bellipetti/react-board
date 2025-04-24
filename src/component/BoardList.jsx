@@ -3,7 +3,10 @@ import { getPosts } from '../api/postApi';
 import { useCustomHook } from '../hooks/useCustomHooks';
 import PageComponent from "./common/PageComponent";
 import { useSearchParams } from "react-router-dom";
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of f4983cd (update 1000+9)
 
 
 const initialState = {
