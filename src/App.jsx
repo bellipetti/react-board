@@ -3,7 +3,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 import BoardList from './component/BoardList';
 import BoardView from './component/BoardView';
 import BoardWrite from './component/BoardWrite';
-import './App.css'
+// import './App.css'
 
 
 function App() {
