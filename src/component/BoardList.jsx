@@ -4,9 +4,13 @@ import { useCustomHook } from '../hooks/useCustomHooks';
 import PageComponent from "./common/PageComponent";
 import { useSearchParams } from "react-router-dom";
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> parent of f4983cd (update 1000+9)
+=======
+import '../App.css'
+>>>>>>> parent of fafa913 (update 1000+9)
 
 
 const initialState = {
