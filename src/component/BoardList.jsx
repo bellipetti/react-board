@@ -3,7 +3,7 @@ import { getPosts } from '../api/postApi';
 import { useCustomHook } from '../hooks/useCustomHooks';
 import PageComponent from "./common/PageComponent";
 import { useSearchParams } from "react-router-dom";
-import '../App.css'
+
 
 
 const initialState = {
