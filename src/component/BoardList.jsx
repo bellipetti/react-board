@@ -104,7 +104,7 @@ const BoardList = () => {
             <div className="main-visual">
                 <div>
                     <h1>AI 시대를 넘어, 미래를 향해</h1>
-                    <p>2025 중앙대학교 스타일 게시판</p>
+                    <p>2025</p>
                 </div>
             </div>
             <h3>BoardList Page</h3>
