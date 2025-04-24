@@ -1,7 +1,98 @@
+<<<<<<< HEAD
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+=======
+/* 기본 레이아웃 설정 */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 링크 스타일 */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: none;
+}
+a:hover {
+  color: #535bf2;
+}
+
+/* body 기본 */
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* 네비게이션 바 */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  background-color: #f4f4f4;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.navbar a:hover {
+  color: #0047ba;
+}
+
+/* 메인 비주얼 영역 */
+.main-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=80') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.main-visual h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.main-visual p {
+  font-size: 1.2rem;
+  color: #eee;
+}
+
+/* 게시판 테이블 스타일 */
+.board-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.board-table th, .board-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+>>>>>>> parent of 8a9e267 (update 1000+9)
   text-align: center;
 }
 
